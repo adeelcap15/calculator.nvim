@@ -1,0 +1,25 @@
+================================================================================
+							     *qalculator.nvim*
+This plugin helps you to run qalc expression and can also sum columns. e.g.
+
+
+						      *qalculator.calculate()*
+require("qalculator").calculate({mode})
+
+The input comes from the register. You can change it. The default register 
+is register a.
+
+Following are {mode} values. 
+1. expr (input is qalc expression)
+2. sum (applies on column based values, input is column based number values)
+
+If mode is expr:	
+	Calculate the expression and returns the result and show it as virtual.
+
+If mode is sum:
+	Calculate all values and returns the result.
+ >
+
+        require("qalculator").calculate("expr")
+<
+vim:tw=78:ts=8:ft=help:norl:

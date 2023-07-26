@@ -1,0 +1,21 @@
+describe("qalculator", function()
+	before_each(function()
+	end)
+
+	it("can be required", function()
+		require("qalculator")
+	end)
+
+	it("can add", function()
+		vim.api.nvim_set_current_line("1+1")
+		vim.fn.setreg("a", "1+1")
+		local res = require("qalculator").calculate("expr")
+		assert(res == "1+1 = 2")
+	end)
+
+	it("can add columns", function()
+		vim.fn.setreg("a", "1\n2\n3")
+		local res = require("qalculator").calculate("sum")
+		assert(res == 6)
+	end)
+end)
